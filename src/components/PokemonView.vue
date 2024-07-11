@@ -2,13 +2,15 @@
 import { useFetch } from '@vueuse/core'
 import {snakeToTitle} from "../casing.ts";
 import {useRoute} from "vue-router";
-import {computed} from "vue";
-import {Pokemon} from "../models.ts";
+import {computed, ref} from "vue";
+import {Pokemon, Sprites, SpriteSide} from "../models.ts";
 import AutoColumn from "./AutoColumn.vue";
 const route = useRoute()
 const id = computed(() =>route.params.id)
 const { isFetching, error, data } = useFetch(`https://pokeapi.co/api/v2/pokemon/${id.value}`).json<Pokemon>()
 
+const currSpriteSide = ref<SpriteSide>("front")
+const currSprite = computed<keyof Sprites>(() => `${currSpriteSide.value}_default` )
 </script>
 
 <template>
@@ -34,7 +36,12 @@ const { isFetching, error, data } = useFetch(`https://pokeapi.co/api/v2/pokemon/
     </div>
 
   </AutoColumn>
-  <img :src="data?.sprites!.front_default" />
+
+  <select class="select" v-model="currSpriteSide">
+    <option value="front">Front</option>
+    <option value="back">Back</option>
+  </select>
+  <img :src="data?.sprites![currSprite]" />
 </div>
 </template>
 
