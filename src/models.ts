@@ -27,4 +27,6 @@ export interface Pokemon {
     order: number
     species: NamedApiRef
     sprites: Sprites
+    stats: {base_stat: number, stat: NamedApiRef, effort: number}[]
+    types: {type: NamedApiRef, slot: number}[]
 }

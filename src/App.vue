@@ -1,6 +1,4 @@
 <script setup lang="ts">
-import HelloWorld from './components/HelloWorld.vue'
-import PokemonView from "./components/PokemonView.vue";
 import "./style.css"
 </script>
 
@@ -13,8 +11,7 @@ import "./style.css"
       <img src="./assets/vue.svg" class="logo vue" alt="Vue logo" />
     </a>
   </div>
-  <PokemonView url="https://pokeapi.co/api/v2/pokemon/pichu"/>
-  <HelloWorld msg="Vite + Vue" />
+  <RouterView/>
 </template>
 
 <style scoped>
