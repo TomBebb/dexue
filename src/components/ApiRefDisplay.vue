@@ -1,12 +1,19 @@
 <script setup lang="ts">
 import {NamedApiRef} from "../models.ts";
 import {snakeToTitle} from "../casing.ts";
-defineProps<{ref: NamedApiRef}>();
+import {toRoute} from "../router.ts";
+defineProps<{apiRef: NamedApiRef}>();
 </script>
 
 <template>
 
-  {{snakeToTitle(ref.name)}}
+  <RouterLink :to="toRoute(apiRef.url)">
+
+    <div>
+      {{ snakeToTitle(apiRef.name) }}
+
+    </div>
+  </RouterLink>
 </template>
 
 <style scoped>

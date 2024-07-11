@@ -30,3 +30,10 @@ export interface Pokemon {
     stats: {base_stat: number, stat: NamedApiRef, effort: number}[]
     types: {type: NamedApiRef, slot: number}[]
 }
+
+export interface Paginated {
+    count: number
+    next: string|null
+    previous: string|null
+    results: NamedApiRef[]
+}
