@@ -1,6 +1,7 @@
 <script setup lang="ts">
 import HelloWorld from './components/HelloWorld.vue'
 import PokemonView from "./components/PokemonView.vue";
+import "./style.css"
 </script>
 
 <template>

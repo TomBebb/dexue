@@ -12,7 +12,7 @@ const { isFetching, error, data } = useFetch(props.url).json<Pokemon>()
 
 <template>
 <div>
-  <div>
+  <div class="font-bold">
     {{data?.name}}
   </div>
   <img :src="data?.sprites!.front_default">
