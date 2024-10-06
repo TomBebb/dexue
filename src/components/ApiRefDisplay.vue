@@ -7,7 +7,7 @@ defineProps<{ apiRef: NamedApiRef }>()
 
 <template>
   <RouterLink :to="toRoute(apiRef.url)">
-    <div>
+    <div class="border border-2 p-2">
       {{ snakeToTitle(apiRef.name) }}
     </div>
   </RouterLink>

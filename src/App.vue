@@ -1,5 +1,12 @@
 <script setup lang="ts">
 import './style.css'
+
+const links: { name: string; path: string }[] = [
+  { name: 'Pokemon', path: 'pokemon' },
+  { name: 'Berries', path: 'berry' },
+  { name: 'Games', path: 'version' },
+  { name: 'Moves', path: 'move' },
+]
 </script>
 
 <template>
@@ -9,7 +16,9 @@ import './style.css'
     <div class="font-bold">PokeDex</div>
     <div class="flex-1"></div>
 
-    <RouterLink to="/list/pokemon"> Pokemon </RouterLink>
+    <RouterLink class="btn" v-for="link in links" :to="`/list/${link.path}`">{{
+      link.name
+    }}</RouterLink>
   </div>
   <div class="overflow-scroll p-2">
     <RouterView />

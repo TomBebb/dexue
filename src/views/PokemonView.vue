@@ -7,7 +7,7 @@ import { Pokemon, Sprites, SpriteSide } from '../models.ts'
 import AutoColumn from '../components/AutoColumn.vue'
 const route = useRoute()
 const id = computed(() => route.params.id)
-const { isFetching, error, data } = useFetch(
+const { data } = useFetch(
   `https://pokeapi.co/api/v2/pokemon/${id.value}`
 ).json<Pokemon>()
 

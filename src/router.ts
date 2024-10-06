@@ -6,7 +6,7 @@ const PokemonView = () => import('./views/PokemonView.vue')
 export const routes: RouteRecordRaw[] = [
   {
     path: '/',
-    component: HomeView,
+    component: () => router.push('/list/pokemon'),
     name: 'Home',
   },
   {
