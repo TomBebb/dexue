@@ -1,5 +1,5 @@
-import {titleCase} from "title-case";
+import { titleCase } from 'title-case'
 
 export function snakeToTitle(text: string): string {
-    return titleCase(text.replace('-', ' '))
+  return titleCase(text.replace('-', ' '))
 }
