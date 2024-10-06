@@ -1,6 +1,7 @@
 import { createRouter, createWebHistory, RouteRecordRaw } from 'vue-router'
 import Paginated from './views/PaginatedView.vue'
 import HomeView from './views/HomeView.vue'
+import BerriesView from './views/BerriesView.vue'
 
 const PokemonView = () => import('./views/PokemonView.vue')
 export const routes: RouteRecordRaw[] = [
@@ -8,6 +9,11 @@ export const routes: RouteRecordRaw[] = [
     path: '/',
     component: () => router.push('/list/pokemon'),
     name: 'Home',
+  },
+  {
+    path: '/berries',
+    component: BerriesView,
+    name: 'Berries',
   },
   {
     path: '/list/:ty',
