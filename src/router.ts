@@ -1,12 +1,13 @@
 import { createRouter, createWebHistory, RouteRecordRaw } from 'vue-router'
-import Paginated from './components/PaginatedView.vue'
+import Paginated from './views/PaginatedView.vue'
+import HomeView from './views/HomeView.vue'
 
-const HelloWorld = () => import('./components/HelloWorld.vue')
-const PokemonView = () => import('./components/PokemonView.vue')
+const PokemonView = () => import('./views/PokemonView.vue')
 export const routes: RouteRecordRaw[] = [
   {
     path: '/',
-    component: HelloWorld,
+    component: HomeView,
+    name: 'Home',
   },
   {
     path: '/list/:ty',

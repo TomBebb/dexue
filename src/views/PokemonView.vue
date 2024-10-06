@@ -4,7 +4,7 @@ import { snakeToTitle } from '../casing.ts'
 import { useRoute } from 'vue-router'
 import { computed, ref } from 'vue'
 import { Pokemon, Sprites, SpriteSide } from '../models.ts'
-import AutoColumn from './AutoColumn.vue'
+import AutoColumn from '../components/AutoColumn.vue'
 const route = useRoute()
 const id = computed(() => route.params.id)
 const { isFetching, error, data } = useFetch(

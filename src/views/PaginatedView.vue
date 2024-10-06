@@ -1,7 +1,7 @@
 <script setup lang="ts">
 import { useRoute } from 'vue-router'
 import { computedAsync } from '@vueuse/core'
-import ApiRefDisplay from './ApiRefDisplay.vue'
+import ApiRefDisplay from '../components/ApiRefDisplay.vue'
 import { toRoute } from '../router.ts'
 import { Paginated } from '../models.ts'
 
